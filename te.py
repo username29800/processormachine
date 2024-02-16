@@ -67,7 +67,6 @@ while run:
       op=''
       for i in ll:
         op=op+str(i)+'\n'
-      op=op[:-1]
       wf=open(str(input()),'w')
       wf.write(op)
       wf.close()
