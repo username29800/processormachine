@@ -63,7 +63,7 @@ while run:
       of=open(str(input()),'r')
       ll=of.readlines()
       for i in ll:
-        i=i.rstrip()
+        i=i.strip()
       of.close()
     if ed('wf'):
       op=''
