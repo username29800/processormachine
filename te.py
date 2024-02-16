@@ -61,6 +61,9 @@ while run:
   if ed('of'):
     of=open(str(input()),'r')
     ll=of.readlines()
+    for i in ll:
+      if i[-1]=='\n':
+        i=i[:-1]
     of.close()
   if ed('wf'):
     op=''
