@@ -58,3 +58,17 @@ while run:
       if i!=[]:
         lb.append(i)
     ll=lb
+  if ed('of'):
+    of=open(str(input()),'r')
+    ll=of.readlines()
+    of.close()
+  if ed('wf'):
+    op=''
+    for i in ll:
+      op=op+str(i)+'\n'
+    op=op[:-1]
+    wf=open(str(input()),'w')
+    wf.write(op)
+    wf.close()
+  if ed('ecl'):
+    ll=[]
