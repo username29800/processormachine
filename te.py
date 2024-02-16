@@ -61,7 +61,7 @@ while run:
       ll=lb
     if ed('of'):
       of=open(str(input()),'r')
-      ll=of.splitlines()
+      ll=of.read().splitlines()
       of.close()
     if ed('wf'):
       op=''
