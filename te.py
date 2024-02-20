@@ -22,7 +22,7 @@ while run:
         ap=ap+' '+i
       ap=ap[1:]
     if ed('a'): #append prev cursor
-      pc=str(pc)+str(ap)
+      pc=str(pc)+str(ui[2:])
     if ed('l'): #print current line
       print(pc+'|'+lc)
     if ed('c'): #set cursor
