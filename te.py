@@ -59,7 +59,7 @@ while run:
       for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1])])):
         print(str(i),ll[i])
     if ed('lp.'): #print lines, not indexed, with range
-      for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1]])):
+      for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1])])):
         print(ll[i])
     if ed('lp'): #print lines, not indexed
       for i in ll:
