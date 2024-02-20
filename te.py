@@ -14,51 +14,53 @@ while run:
   try:
     if 1: #input
       ui=input('> ')
+      cp=ui.split()[0]
+      ap=ui.split()[1:]
     if ed('a'):
-      pc=str(pc)+str(input())
+      pc=str(pc)+str(ap)
     if ed('l'):
       print(pc+'|'+lc)
     if ed('c'):
       ec=pc+lc
-      nc=input()
-      pc=ec[:int(nc)]
-      lc=ec[int(nc):]
+      pc=ec[:int(ap)]
+      lc=ec[int(ap):]
     if ed('x'):
-      pc=pc[:-int(input())]
+      pc=pc[:-int(ap)]
     if ed('d') and ll!=[]:
-      ll[int(input())-1]=[]
-    if ed('o'):
-      ln=int(input())-1
+      del ll[int(ap)-1]
+    if ed('o') and ll!=[]:
+      ln=int(ap)-1
       lpc=ll[:ln]
       llc=ll[ln:]
-      lpc.append('')
-      lpc[-1]=pc+lc
+      lpc.append(pc+lc)
       ll=lpc+llc
       pc=''
       lc=''
     if ed('la'):
-      ll.append('')
-      ll[-1]=pc+lc
+      ll.append(pc+lc)
       pc=''
       lc=''
     if ed('y'):
-      cr=ll[int(input())-1]
+      cr=ll[int(ap)-1]
     if ed('n'):
-      pc=ll[int(input())-1]
+      pc=ll[int(ap)-1]
       lc=''
     if ed('p'):
       pc=pc+cr
     if ed('ls'):
       for i in ll:
+        print(str(ll.index(i)),i)
+    if ed('lr'):
+      for i in ll[ap.split()[0]-1:ap.split[1]-1]:
+        print(str(ll.index(i)),i)
+    if ed('lrw'):
+      for i in ll[ap.split()[0]-1:ap.split[1]-1]:
+        print(i)
+    if ed('lsw'):
+      for i in ll:
         print(i)
     if ed('quit'):
       run=0
-    if ed('cl'):
-      lb=[]
-      for i in ll:
-        if i!=[]:
-          lb.append(i)
-      ll=lb
     if ed('of'):
       of=open(str(input()),'r')
       ll=of.read().splitlines()
