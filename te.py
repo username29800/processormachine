@@ -58,23 +58,23 @@ while run:
     if ed('lm'): #print lines, indexed, with range
       for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1])])):
         print(ll[i])
-    if ed('lp.'): #print lines, not indexed, with range
+    if ed('ml'): #print lines, not indexed, with range
       for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1])])):
         print(ll[i])
-    if ed('lp'): #print lines, not indexed
+    if ed('.l'): #print lines, not indexed
       for i in ll:
         print(i)
     if ed('quit'):
       run=0
     if ed('of'): #open file
-      of=open(str(input()),'r')
+      of=open(str(ap),'r')
       ll=of.read().splitlines()
       of.close()
     if ed('wf'): #write to file
       op=''
       for i in ll:
         op=op+str(i)+'\n'
-      wf=open(str(input()),'w')
+      wf=open(str(ap),'w')
       wf.write(op)
       wf.close()
     if ed('ecl'): #clear all editor lines
