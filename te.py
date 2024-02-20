@@ -54,10 +54,10 @@ while run:
       pc=pc+cr
     if ed('l.'): #print lines, indexed
       for i in range(len(ll)):
-        print(str(i),ll[i])
+        print(str(i+1),ll[i])
     if ed('lm'): #print lines, indexed, with range
       for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1])])):
-        print(str(i),ll[i])
+        print(ll[i])
     if ed('lp.'): #print lines, not indexed, with range
       for i in range(int(ap.split()[0])-1,len(ll[:int(ap.split()[1])])):
         print(ll[i])
