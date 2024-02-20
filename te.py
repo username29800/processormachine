@@ -15,7 +15,7 @@ while run:
     if 1: #input
       ui=input('> ')
       cp=ui.split()[0]
-      ap=ui.split()[1:]
+      ap=ui.split()[0:]
     if ed('a'):
       pc=str(pc)+str(ap)
     if ed('l'):
