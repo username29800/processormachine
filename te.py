@@ -60,7 +60,7 @@ while run:
     if ed('lm'): #print lines, indexed, with range
       li=1
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
-        print(str(int(ap.split()[0])+li),i)
+        print(str(int(ap.split()[0])+li-1),i)
         li+=1
     if ed('ml'): #print lines, not indexed, with range
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
