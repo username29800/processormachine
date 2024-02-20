@@ -20,6 +20,7 @@ while run:
       ap=''
       for i in ui[1:]:
         ap=ap+i
+      ap=ap[1:]
     if ed('a'):
       pc=str(pc)+str(ap)
     if ed('l'):
