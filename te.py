@@ -18,7 +18,7 @@ while run:
       ui=str(input('> '))
       cp=ui.split()[0]
       ap=''
-      for i in ap[1:]:
+      for i in ui[1:]:
         ap=ap+i
     if ed('a'):
       pc=str(pc)+str(ap)
