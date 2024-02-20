@@ -53,14 +53,18 @@ while run:
     if ed('p'): #paste
       pc=pc+cr
     if ed('l.'): #print lines, indexed
-      for i in range(len(ll)):
-        print(str(i+1),ll[i])
+      li=1
+      for i in ll:
+        print(str(li),i)
+        li+=1
     if ed('lm'): #print lines, indexed, with range
+      li=1
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
-        print(str(i+1),ll[i])
+        print(str(li),i)
+        li+=1
     if ed('ml'): #print lines, not indexed, with range
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
-        print(ll[i])
+        print(i)
     if ed('.l'): #print lines, not indexed
       for i in ll:
         print(i)
