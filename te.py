@@ -15,10 +15,11 @@ def ed(x):
 while run:
   try:
     if 1: #input
-      ui=input('> ')
+      ui=str(input('> '))
       cp=ui.split()[0]
       ap=''
-      ap=ap.join(ui.split()[1:])
+      for i in ap[1:]:
+        ap=ap+i
     if ed('a'):
       pc=str(pc)+str(ap)
     if ed('l'):
