@@ -56,10 +56,10 @@ while run:
       for i in ll:
         print(str(ll.index(i)),i)
     if ed('lm'): #print lines, indexed, with range
-      for i in ll[ap.split()[0]:ap.split()[1]]:
+      for i in ll[ap.split()[0]-1:ap.split()[1]-1]:
         print(str(ll.index(i)),i)
     if ed('lp.'): #print lines, not indexed, with range
-      for i in ll[ap.split()[0]:ap.split()[1]]:
+      for i in ll[ap.split()[0]-1:ap.split()[1]-1]:
         print(i)
     if ed('lp'): #print lines, not indexed
       for i in ll:
