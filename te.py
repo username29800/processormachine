@@ -18,7 +18,7 @@ while run:
       ui=input('> ')
       cp=ui.split()[0]
       ap=''
-      ap.join(ui.split()[1:])
+      ap=ap.join(ui.split()[1:])
     if ed('a'):
       pc=str(pc)+str(ap)
     if ed('l'):
