@@ -18,9 +18,8 @@ while run:
       ui=str(input('> '))
       cp=ui.split()[0]
       ap=''
-      for i in ui[1:]:
+      for i in ui.split()[1:]:
         ap=ap+i
-      ap=ap[1:]
     if ed('a'): #append prev cursor
       pc=str(pc)+str(ap)
     if ed('l'): #print current line
