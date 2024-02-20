@@ -19,7 +19,8 @@ while run:
       cp=ui.split()[0]
       ap=''
       for i in ui.split()[1:]:
-        ap=ap,i
+        ap=ap+' '+i
+      ap=ap[1:]
     if ed('a'): #append prev cursor
       pc=str(pc)+str(ap)
     if ed('l'): #print current line
