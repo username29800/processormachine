@@ -3,10 +3,12 @@ pc=''
 lc=''
 ec=''
 cr=''
+cp=''
+ap=''
 ll=[]
 run=1
 def ed(x):
-  if str(ui)==str(x):
+  if str(cp)==str(x):
     return 1
   else:
     return 0
@@ -15,7 +17,7 @@ while run:
     if 1: #input
       ui=input('> ')
       cp=ui.split()[0]
-      ap=ui.split()[0:]
+      ap=ui.split()[1:]
     if ed('a'):
       pc=str(pc)+str(ap)
     if ed('l'):
