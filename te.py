@@ -58,9 +58,9 @@ while run:
     if ed('lm'): #print lines, indexed, with range
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
         print(str(ll.index(i)+1),i)
-    if ed('mlp'): #print lines, not indexed, with range
+    if ed('lp.'): #print lines, not indexed, with range
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
-        print(i)
+        print(str('')+i)
     if ed('lp'): #print lines, not indexed
       for i in ll:
         print(i)
