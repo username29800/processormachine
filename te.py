@@ -25,7 +25,7 @@ while run:
       pc=str(pc)+str(ui[2:])
     if ed('l'): #print current line
       print(pc+'|'+lc)
-    if ed('c'): #set cursor
+    if ed('p'): #set pointer
       ec=pc+lc
       pc=ec[:int(ap)]
       lc=ec[int(ap):]
@@ -50,7 +50,7 @@ while run:
     if ed('n'): #set line
       pc=ll[int(ap)-1]
       lc=''
-    if ed('p'): #paste
+    if ed('pi'): #paste into
       pc=pc+cr
     if ed('l.'): #print lines, indexed
       li=1
@@ -83,18 +83,31 @@ while run:
       wf.close()
     if ed('ecl'): #clear all editor lines
       ll=[]
-    if ed('f'): #forward search
-      for i in range(len(lc)):
-        if lc[i:i+len(ap)]==ap:
-          pc=pc+lc[:i]
-          lc=lc[i:]
-          break
-    if ed('b'): #backward search
-      for i in range(len(pc)):
-        if pc[i:i+len(ap)]==ap:
-          uc=pc+lc
-          pc=uc[:i]
-          lc=uc[i:]
-          break
-  except:
-    pass
+    if ed('fn'): #forward search with count
+      pa=ap.split()
+      pa[0]=str(pa[0])
+      pa[1]=int(pa[1])
+      for p in range(pa[1]):
+        pc=pc+lc[0]
+        lc=lc[1:]
+        for i in range(len(lc)):
+          if lc[i:i+len(pa[0])]==pa[0]:
+            pc=pc+lc[:i]
+            lc=lc[i:]
+            break
+    if ed('bn'): #backward search with count
+      pa=ap.split()
+      pa[0]=str(pa[0])
+      pa[1]=int(pa[1])
+      for p in range(pa[1]):
+        for i in range(len(pc)):
+          if pc[i:i+len(pa[0])]==pa[0]:
+            uc=pc+lc
+            pc=uc[:i]
+            lc=uc[i:]
+            break
+    if ed('pl'): #move pointer to the end of the line
+      pc=pc+lc
+      lc=''
+  except Exception as xp:
+    print(xp)
