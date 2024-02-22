@@ -83,5 +83,18 @@ while run:
       wf.close()
     if ed('ecl'): #clear all editor lines
       ll=[]
+    if ed('f'): #forward search
+      for i in range(len(lc)):
+        if lc[i:i+len(ap)]==ap:
+          pc=pc+lc[:i]
+          lc=lc[i:]
+          break
+    if ed('b'): #backward search
+      for i in range(len(pc)):
+        if pc[i:i+len(ap)]==ap:
+          uc=pc+lc
+          pc=uc[:i]
+          lc=uc[i:]
+          break
   except:
     pass
