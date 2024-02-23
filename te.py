@@ -55,12 +55,12 @@ while run:
     if ed('l.'): #print lines, indexed
       li=1
       for i in ll:
-        print(str(li),i)
+        print(f'{str(li):{len(str(len(ll)))}} {i}')
         li+=1
     if ed('lm'): #print lines, indexed, with range
       li=1
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
-        print(str(int(ap.split()[0])+li-1),i)
+        print(f'{int(ap.split()[0])+li-1:{len(str(len(ll)))}} {i}')
         li+=1
     if ed('ml'): #print lines, not indexed, with range
       for i in ll[int(ap.split()[0])-1:int(ap.split()[1])]:
@@ -120,5 +120,15 @@ while run:
       uc=pc+lc
       pc=uc[:cc+ap]
       lc=uc[cc+ap:]
+    if ed('m'): #copy to line
+      ln=int(ap)-1
+      lpc=ll[:ln]
+      llc=ll[ln:]
+      lpc.append(pc+lc)
+      ll=lpc+llc
+    if ed('i'): #insert to line
+      ll[int(ap)]=pc+lc
+    if ed('ll'): #last line number
+      print(len(ll))
   except Exception as xp:
     print(xp)
