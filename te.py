@@ -111,5 +111,14 @@ while run:
     if ed('pl'): #move pointer to the end of the line
       pc=pc+lc
       lc=''
+    if ed('pp'): #set relative cursor position
+      if ap[0]=='0':
+        ap=-int(ap)
+      else:
+        ap=int(ap)
+      cc=len(pc)
+      uc=pc+lc
+      pc=uc[:cc+ap]
+      lc=uc[cc+ap:]
   except Exception as xp:
     print(xp)
