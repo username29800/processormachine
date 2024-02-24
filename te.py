@@ -130,5 +130,33 @@ while run:
       ll[int(ap)]=pc+lc
     if ed('ll'): #last line number
       print(len(ll))
+    if ed('h') or ed(';'): #help
+      print(```Editor Commands
+
+a - Append to Current Line
+l - Print Current Line
+p - Set Pointer
+x - Delete Characters
+d - Delete Line
+o - Insert Line
+lo - Append Line
+y - Yank (Copy) Line
+n - Set Line
+pi - Paste Into
+l. - Print Lines (Indexed)
+lm - Print Lines (Indexed, Range)
+ml - Print Lines (Not Indexed, Range)
+.l - Print Lines (Not Indexed)
+quit - Quit the Editor
+of - Open File
+wf - Write to File
+ecl - Clear All Editor Lines
+fn - Forward Search with Count
+bn - Backward Search with Count
+pl - Move Pointer to End of Line
+pp - Set Relative Cursor Position
+m - Copy to Line
+i - Insert to Line
+ll - Last Line Number```)
   except Exception as xp:
     print(xp)
