@@ -160,7 +160,7 @@ i - Insert to Line
 ll - Last Line Number
 ol - Append to Line then Append to Document''')
     if ed('ol'): #append input to the document
-      ll.append(pc+str(ui[2:])+lc)
+      ll.append(pc+str(ui[3:])+lc)
       pc=''
       lc=''
   except Exception as xp:
