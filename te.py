@@ -131,7 +131,7 @@ while run:
     if ed('ll'): #last line number
       print(len(ll))
     if ed('h') or ed(';'): #help
-      print(```Editor Commands
+      print('''Editor Commands
 
 a - Append to Current Line
 l - Print Current Line
@@ -157,6 +157,6 @@ pl - Move Pointer to End of Line
 pp - Set Relative Cursor Position
 m - Copy to Line
 i - Insert to Line
-ll - Last Line Number```)
+ll - Last Line Number''')
   except Exception as xp:
     print(xp)
