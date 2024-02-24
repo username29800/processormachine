@@ -157,6 +157,11 @@ pl - Move Pointer to End of Line
 pp - Set Relative Cursor Position
 m - Copy to Line
 i - Insert to Line
-ll - Last Line Number''')
+ll - Last Line Number
+ol - Append to Line then Append to Document''')
+  if ed('ol'): #append input to the document
+    ll.append(pc+str(ui[2:])+lc)
+    pc=''
+    lc=''
   except Exception as xp:
     print(xp)
