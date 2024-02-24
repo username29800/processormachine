@@ -32,7 +32,11 @@ while run:
     if ed('x'): #delete char, prev cursor
       pc=pc[:-int(ap)]
     if ed('d') and ll!=[]: #delete line
-      del ll[int(ap)-1]
+      for i in ap.split():
+        del ll[int(i)-1]
+    if ed('k'): #kill lines in range
+      pa=ap.split()
+      del ll[int(pa[0])-1:int(pa[1])-1]
     if ed('o') and ll!=[]: #insert line
       ln=int(ap)-1
       lpc=ll[:ln]
