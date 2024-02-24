@@ -32,7 +32,7 @@ while run:
     if ed('x'): #delete char, prev cursor
       pc=pc[:-int(ap)]
     if ed('d') and ll!=[]: #delete line
-      for i in ap.split():
+      for i in ap.split().reverse():
         del ll[int(i)-1]
     if ed('k'): #kill lines in range
       pa=ap.split()
