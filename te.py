@@ -5,6 +5,7 @@ ec=''
 cr=''
 cp=''
 ap=''
+ii=' '*0
 ll=[]
 run=1
 def ed(x):
@@ -41,12 +42,12 @@ while run:
       ln=int(ap)-1
       lpc=ll[:ln]
       llc=ll[ln:]
-      lpc.append(pc+lc)
+      lpc.append(ii+pc+lc)
       ll=lpc+llc
       pc=''
       lc=''
     if ed('lo'): #append line
-      ll.append(pc+lc)
+      ll.append(ii+pc+lc)
       pc=''
       lc=''
     if ed('y'): #yank
@@ -128,10 +129,10 @@ while run:
       ln=int(ap)-1
       lpc=ll[:ln]
       llc=ll[ln:]
-      lpc.append(pc+lc)
+      lpc.append(ii+pc+lc)
       ll=lpc+llc
     if ed('i'): #insert to line
-      ll[int(ap)]=pc+lc
+      ll[int(ap)]=ii+pc+lc
     if ed('ll'): #last line number
       print(len(ll))
     if ed('h') or ed(';'): #help
@@ -164,8 +165,10 @@ i - Insert to Line
 ll - Last Line Number
 ol - Append to Line then Append to Document''')
     if ed('ol'): #append input to the document
-      ll.append(pc+str(ui[3:])+lc)
+      ll.append(ii+pc+str(ui[3:])+lc)
       pc=''
       lc=''
+    if ed('ii'): #set auto indentation
+      ii=' '*int(ap)
   except Exception as xp:
     print(xp)
