@@ -230,6 +230,7 @@ ol - Append to Line then Append to Document''')
           cc+=1
         if cc==int(ap.split()[2]):
           uc[i]=ap.split()[1]
+          break
       pc=''.join(uc)
       lc=''
   except Exception as xp:
