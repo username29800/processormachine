@@ -174,12 +174,28 @@ ol - Append to Line then Append to Document''')
       ii=' '*int(ap)
     if ed('j'): #join lines in range
       pa=ap.split()
-      uc=str("\n".join(ll[pa[0]:pa[1]]))
+      uc=str("\n".join(ll[int(pa[0])-1:int(pa[1])-1]))
       ll[pa[0]]=uc
     if ed('jl'): #join lines in list
       uc=''
       for i in ap.split():
         uc=f'{uc}\n{ll[int(i)-1]}'
-        ll[int(ap.split()[0])-1]=uc
+      uc=uc[1:]  
+      ll[int(ap.split()[0])-1]=uc
+    if ed('s'): #split joined line
+      for i in ll[int(i)-1].splitlines():
+        ll.append(i)
+    if ed('v'): #move line
+      pa=ap.split()
+      uc=str(ll[int(pa[0])-1])
+      ll[int(pa[1])-1]=uc
+      del ll[int(pa[0])-1]
+    if ed('c'): #copy and paste line
+      pa=ap.split()
+      uc=str(ll[int(pa[0])-1])
+      ll[int(pa[1])-1]=uc
+    if ed('e'): #empty current line
+      pc=''
+      lc=''
   except Exception as xp:
     print(xp)
