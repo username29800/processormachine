@@ -221,26 +221,17 @@ ol - Append to Line then Append to Document''')
       uc=uc[1:]  
       ll[int(ap.split()[0])-1]=uc
     if ed('f'): #search and replace
-      uc=[]
-      for i in range(len(pc+lc)):
-        uc.append(str(pc+lc)[i])
+      pa=ap.split()
+      pa[0]=str(pa[0])
+      pa[1]=int(pa[1])
+      pa[2]=int(pa[2])
       cc=0
-      for i in range(len(uc)):
-        if uc[i:-1+i+len(ap.split()[0])]==ap.split()[0]:
-          cc+=1
-        if cc==int(ap.split()[2]):
-          uc[i]=ap.split()[1]
-          break
-      pc=''.join(uc)
-      lc=''
-    if ed('g'): #search and replace all
-      uc=[]
-      for i in range(len(pc+lc)):
-        uc.append(str(pc+lc)[i])
-      for i in range(len(uc)):
-        if uc[i:-1+i+len(ap.split()[0])]==ap.split()[0]:
-          uc[i]=ap.split()[1]
-      pc=''.join(uc)
-      lc=''
+      for p in range(pa[2]):
+        cc+=1
+        for i in range(len(lc)):
+          if lc[i:i+len(pa[0])]==pa[0] and cc==pa[2]:
+            pc=pc+lc[:i]+pa[1]
+            lc=lc[i+len(pa[0]):]
+            break
   except Exception as xp:
     print(xp)
