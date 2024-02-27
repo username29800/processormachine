@@ -243,7 +243,7 @@ ol - Append to Line then Append to Document''')
             pc=pc+lc[:i+len(pa[0])]
             lc=lc[i+len(pa[0]):]
         pc=pc[:-len(pa[0])]+pa[1]
-        lc=pc+lc
-        pc=''
+        lc=pc[-1]+lc
+        pc=pc[:-1]
   except Exception as xp:
     print(xp)
