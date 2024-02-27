@@ -210,5 +210,27 @@ ol - Append to Line then Append to Document''')
       ll=ll[:ln]
     if ed('bb'): #restore lines
       ll.extend(bs)
+    if ed('jn'): #join lines in range without newline
+      pa=ap.split()
+      uc=str("".join(ll[int(pa[0])-1:int(pa[1])]))
+      ll[int(pa[0])-1]=uc
+    if ed('jnn'): #join lines in list without newline
+      uc=''
+      for i in ap.split():
+        uc=f'{uc}{ll[int(i)-1]}'
+      uc=uc[1:]  
+      ll[int(ap.split()[0])-1]=uc
+    if ed('f'): #search and replace
+      pa=ap.split()
+      pa[0]=str(pa[0])
+      pa[1]=int(pa[1])
+      for p in range(pa[1]):
+        pc=pc+lc[0]
+        lc=lc[1:]
+        for i in range(len(lc)):
+          if lc[i:i+len(pa[0])]==pa[0]:
+            pc=pc+lc[:i]
+            lc=lc[i:]
+            break
   except Exception as xp:
     print(xp)
