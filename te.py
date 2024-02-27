@@ -7,6 +7,7 @@ cp=''
 ap=''
 ii=' '*0
 ll=[]
+bs=[]
 run=1
 def ed(x):
   if str(cp)==str(x):
@@ -203,5 +204,11 @@ ol - Append to Line then Append to Document''')
     if ed('e'): #empty current line
       pc=''
       lc=''
+    if ed('b'): #backup lines after arg
+      ln=int(ap)-1
+      bs=list(ll[ln:])
+      ll=ll[:ln]
+    if ed('bb'): #restore lines
+      ll.extend(bs)
   except Exception as xp:
     print(xp)
