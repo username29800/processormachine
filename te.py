@@ -94,12 +94,12 @@ while run:
       pa[0]=str(pa[0])
       pa[1]=int(pa[1])
       for p in range(pa[1]):
-        pc=pc+lc[0]
-        lc=lc[1:]
+        #pc=pc+lc[0]
+        #lc=lc[1:]
         for i in range(len(lc)):
-          if lc[i:i+len(pa[0])-1]==pa[0]:
-            pc=pc+lc[:i]
-            lc=lc[i:]
+          if lc[i:i+len(pa[0])]==pa[0]:
+            pc=pc+lc[:i+len(pa[0])]
+            lc=lc[i+len(pa[0]):]
             break
     if ed('bn'): #backward search with count
       pa=ap.split()
@@ -109,7 +109,7 @@ while run:
         lc=pc[-1]+lc
         pc=pc[:-1]
         for i in range(len(pc),0,-1):
-          if pc[1+i-len(pa[0]):i]==pa[0]:
+          if pc[i-len(pa[0]):i]==pa[0]:
             uc=pc+lc
             pc=uc[:i]
             lc=uc[i:]
