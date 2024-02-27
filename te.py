@@ -229,7 +229,7 @@ ol - Append to Line then Append to Document''')
       for p in range(pa[2]):
         cc+=1
         for i in range(len(lc)):
-          if lc[i:i+len(pa[0])]==pa[0] and cc==pa[2]:
+          if lc[i:i+len(pa[0])]==pa[0] and cc==1+pa[2]:
             pc=pc+lc[:i]+pa[1]
             lc=lc[i+len(pa[0]):]
             break
