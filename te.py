@@ -97,7 +97,7 @@ while run:
         pc=pc+lc[0]
         lc=lc[1:]
         for i in range(len(lc)):
-          if lc[i:i+len(pa[0])]==pa[0]:
+          if lc[i:i+len(pa[0])+1]==pa[0]:
             pc=pc+lc[:i]
             lc=lc[i:]
             break
@@ -109,7 +109,7 @@ while run:
         lc=pc[-1]+lc
         pc=pc[:-1]
         for i in range(len(pc),0,-1):
-          if pc[i-len(pa[0]):i]==pa[0]:
+          if pc[i-len(pa[0]):i+1]==pa[0]:
             uc=pc+lc
             pc=uc[:i]
             lc=uc[i:]
@@ -226,11 +226,20 @@ ol - Append to Line then Append to Document''')
         uc.append(str(pc+lc)[i])
       cc=0
       for i in range(len(uc)):
-        if uc[i]==ap.split()[0]:
+        if uc[i:1+i+len(ap.split()[0])]==ap.split()[0]:
           cc+=1
         if cc==int(ap.split()[2]):
           uc[i]=ap.split()[1]
           break
+      pc=''.join(uc)
+      lc=''
+    if ed('g'): #search and replace all
+      uc=[]
+      for i in range(len(pc+lc)):
+        uc.append(str(pc+lc)[i])
+      for i in range(len(uc)):
+        if uc[i:1+i+len(ap.split()[0])]==ap.split()[0]:
+          uc[i]=ap.split()[1]
       pc=''.join(uc)
       lc=''
   except Exception as xp:
