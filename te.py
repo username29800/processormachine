@@ -106,8 +106,8 @@ while run:
       pa[0]=str(pa[0])
       pa[1]=int(pa[1])
       for p in range(pa[1]):
-        lc=pc[-1]+lc
-        pc=pc[:-1]
+        #lc=pc[-1]+lc
+        #pc=pc[:-1]
         for i in range(len(pc),0,-1):
           if pc[i-len(pa[0]):i]==pa[0]:
             uc=pc+lc
