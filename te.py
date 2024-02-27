@@ -225,11 +225,11 @@ ol - Append to Line then Append to Document''')
       pa[0]=str(pa[0])
       pa[1]=str(pa[1])
       pa[2]=int(pa[2])
-      cc=0
+      cc=pa[2]
       for p in range(pa[2]):
-        cc+=1
+        cc-=1
         for i in range(len(lc)):
-          if lc[i:i+len(pa[0])]==pa[0] and cc==1+pa[2]:
+          if lc[i:i+len(pa[0])]==pa[0] and cc==0:
             pc=pc+lc[:i]+pa[1]
             lc=lc[i+len(pa[0]):]
             break
