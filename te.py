@@ -220,7 +220,7 @@ ol - Append to Line then Append to Document''')
         uc=f'{uc}{ll[int(i)-1]}'
       uc=uc[1:]  
       ll[int(ap.split()[0])-1]=uc
-    if ed('f'): #search and replace
+    if ed('f'): #search and replace by given count
       pa=ap.split()
       pa[0]=str(pa[0])
       pa[2]=int(pa[2])
@@ -232,7 +232,7 @@ ol - Append to Line then Append to Document''')
             pc=pc+lc[:i+len(pa[0])]
             lc=lc[i+len(pa[0]):]
             break
-      pc=pc[:-len(pa[0])]+pa[1]
+        pc=pc[:-len(pa[0])]+pa[1]
     if ed('g'): #search and replace all
       pa=ap.split()
       for p in range(int(len(lc)/len(pa[0]))):
