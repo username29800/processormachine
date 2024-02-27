@@ -223,7 +223,7 @@ ol - Append to Line then Append to Document''')
     if ed('f'): #search and replace
       pa=ap.split()
       pa[0]=str(pa[0])
-      pa[1]=int(pa[1])
+      pa[1]=str(pa[1])
       pa[2]=int(pa[2])
       cc=0
       for p in range(pa[2]):
