@@ -174,7 +174,7 @@ ol - Append to Line then Append to Document''')
       ii=' '*int(ap)
     if ed('j'): #join lines in range
       pa=ap.split()
-      uc=str("\n".join(ll[int(pa[0])-1:int(pa[1])-1]))
+      uc=str("\n".join(ll[int(pa[0])-1:int(pa[1])]))
       ll[int(pa[0])-1]=uc
     if ed('jl'): #join lines in list
       uc=''
