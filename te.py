@@ -228,7 +228,7 @@ ol - Append to Line then Append to Document''')
       for i in uc:
         if i==ap.split()[0]:
           cc+=1
-        if cc==ap.split()[2]:
+        if cc==int(ap.split()[2]):
           i=ap.split()[1]
       pc=''.join(uc)
       lc=''
