@@ -235,12 +235,10 @@ ol - Append to Line then Append to Document''')
       pc=pc[:-len(pa[0])]+pa[1]
     if ed('g'): #search and replace all
       pa=ap.split()
-      pa[0]=str(pa[0])
-      pa[2]=int(pa[2])
-      for p in range(pa[2]):
+      for p in range(len(lc)/len(pa[0])):
         #pc=pc+lc[0]
         #lc=lc[1:]
-        for i in range(len(lc)):
+        for i in range(len()):
           if lc[i:i+len(pa[0])]==pa[0]:
             pc=pc+lc[:i+len(pa[0])]
             lc=lc[i+len(pa[0]):]
