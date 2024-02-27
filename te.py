@@ -185,6 +185,12 @@ ol - Append to Line then Append to Document''')
     if ed('s'): #split joined line
       for i in ll[int(i)-1].splitlines():
         ll.append(i)
+    if ed('ss'): #split line in place
+      ln=int(ap)-1
+      lpc=ll[:ln]
+      llc=ll[ln+1:]
+      lpc.extend(ll[ln].splitlines())
+      ll=lpc+llc
     if ed('v'): #move line
       pa=ap.split()
       uc=str(ll[int(pa[0])-1])
