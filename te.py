@@ -111,8 +111,8 @@ while run:
         for i in range(len(pc),0,-1):
           if pc[i-len(pa[0]):i]==pa[0]:
             uc=pc+lc
-            pc=uc[:i]
-            lc=uc[i:]
+            pc=uc[:i-len(pa[0])]
+            lc=uc[i-len(pa[0]):]
             break
     if ed('pl'): #move pointer to the end of the line
       pc=pc+lc
