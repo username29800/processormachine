@@ -242,6 +242,6 @@ ol - Append to Line then Append to Document''')
           if lc[i:i+len(pa[0])]==pa[0]:
             pc=pc+lc[:i+len(pa[0])]
             lc=lc[i+len(pa[0]):]
-            pc=pc[:-len(pa[0])]+pa[1]
+        pc=pc[:-len(pa[0])]+pa[1]
   except Exception as xp:
     print(xp)
