@@ -132,7 +132,9 @@ while run:
       lpc.append(ii+pc+lc)
       ll=lpc+llc
     if ed('i'): #insert to line
-      ll[int(ap)]=ii+pc+lc
+      ll[int(ap)-1]=ii+pc+lc
+      pc=''
+      lc=''
     if ed('ll'): #last line number
       print(len(ll))
     if ed('h') or ed(';'): #help
@@ -170,5 +172,14 @@ ol - Append to Line then Append to Document''')
       lc=''
     if ed('ii'): #set auto indentation
       ii=' '*int(ap)
+    if ed('j'): #join lines in range
+      pa=ap.split()
+      uc=str("\n".join(ll[pa[0]:pa[1]]))
+      ll[pa[0]]=uc
+    if ed('jl'): #join lines in list
+      uc=''
+      for i in ap.split():
+        uc=f'{uc}\n{ll[int(i)-1]}'
+        ll[int(ap.split()[0])-1]=uc
   except Exception as xp:
     print(xp)
